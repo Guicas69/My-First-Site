@@ -10,10 +10,9 @@ body {
   background: #fcfcfc;
 }
 .container {
-  position:sticky;
   opacity: 0.9;
   width: 500px;
-  height: 500px;
+  height: 575px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255)
 }
@@ -28,7 +27,6 @@ body {
   display: flex;
   flex: 1;
   margin-left: 10px;
-  border: 1px solid #ccc; /* Adicionar uma borda para definir a caixa de texto */
   padding-left: 50px;
   padding-top: 30px;
   border-radius: 10px;
@@ -40,19 +38,20 @@ body {
 .input-box input {
   flex: 1; /* A caixa de texto irá ocupar todo o espaço restante */
   padding: 10px; /* Adicionar algum preenchimento para melhorar a aparência */
-  margin-left: 10px; /* Adicionar espaço entre o ícone e a caixa de texto */
+  margin-left: 3px; /* Adicionar espaço entre o ícone e a caixa de texto */
   border: 1px solid #ccc; /* Adicionar uma borda para definir a caixa de texto */
   border-radius: 5px; /* Adicionar bordas arredondadas */
 }
 .input-box i {
-  font-size: 20px; /* Definir o tamanho do ícone */
-  margin-right: 10px; /* Adicionar espaço entre o ícone e a caixa de texto */
+  font-size: 19px; /* Definir o tamanho do ícone */
+  margin-right: 10px;
+  margin-top: 10px; /* Adicionar espaço entre o ícone e a caixa de texto */
 }
 .container .Box{  
   position:absolute;
   width: 12vw;
   height: 7vh;
-  top: 87%;
+  top: 89%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(0, 0, 0);
