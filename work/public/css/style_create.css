@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*
+{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body {
+  background: #fcfcfc;
+}
+.container {
+  position:sticky;
+  opacity: 0.9;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255)
+}
+.container h2 {
+  padding-top: 20px;
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.input-box {
+  display: flex;
+  flex: 1;
+  margin-left: 10px;
+  border: 1px solid #ccc; /* Adicionar uma borda para definir a caixa de texto */
+  padding-left: 50px;
+  padding-top: 30px;
+  border-radius: 10px;
+  letter-spacing: 0.7em;
+  margin-inline-start: 10px;
+  padding: 15px;
+
+}
+.input-box input {
+  flex: 1; /* A caixa de texto irá ocupar todo o espaço restante */
+  padding: 10px; /* Adicionar algum preenchimento para melhorar a aparência */
+  margin-left: 10px; /* Adicionar espaço entre o ícone e a caixa de texto */
+  border: 1px solid #ccc; /* Adicionar uma borda para definir a caixa de texto */
+  border-radius: 5px; /* Adicionar bordas arredondadas */
+}
+.input-box i {
+  font-size: 20px; /* Definir o tamanho do ícone */
+  margin-right: 10px; /* Adicionar espaço entre o ícone e a caixa de texto */
+}
+.container .Box{  
+  position:absolute;
+  width: 12vw;
+  height: 7vh;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 1.50em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/**
+.conteiner .format
+{
+    position: absolute;
+    width: 20vw;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+}
+.container .Box {
+  position:relative;
+  text-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 1.50em;
+  cursor: pointer;
+}
+.Box
+{
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: rgb(252, 252, 252);
+  color: #000;
+  font-weight: 800;
+  font-size: 1.50em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px;
+}
