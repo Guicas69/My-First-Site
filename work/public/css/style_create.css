@@ -58,11 +58,35 @@ body {
   background: rgb(0, 0, 0);
   color: #ffffff;
   text-align: center;
-  align-items: center;
   padding: 15px;
   font-weight: 700;
   font-size: 1.50em;
   letter-spacing: 0.05em;
   cursor: pointer;
   border-radius: 4px;
+}
+
+@media only screen and (max-width: 500px) {
+  @import url('images/pizza_image.jpg');
+
+  .container {
+    max-width: 70%; /* Alterar a largura máxima para ocupar 100% da largura da tela */
+  }
+
+  .container h2 {
+    font-size: 20px; /* Reduzir o tamanho da fonte */
+  }
+
+  .input-box i {
+    font-size: 14px; /* Reduzir o tamanho do ícone */
+  }
+
+  .container .Box {
+    width: 24vw;
+    height: 4vh;
+    top: 88%;
+    left: 50%;
+    font-weight: 550;  
+    padding: 5px;
+  }
 }
