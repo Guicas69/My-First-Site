@@ -23,4 +23,4 @@ app.get('/save_info', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/save_info.html'))
 })
 
-app.listen(3000)
+app.listen(8000)
