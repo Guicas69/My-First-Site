@@ -40,7 +40,7 @@ body {
   flex: 1; /* A caixa de texto irá ocupar todo o espaço restante */
   padding: 10px; /* Adicionar algum preenchimento para melhorar a aparência */
   margin-left: 3px; /* Adicionar espaço entre o ícone e a caixa de texto */
-  border: 1px solid #ccc; /* Adicionar uma borda para definir a caixa de texto */
+  border: 1px solid #000000; /* Adicionar uma borda para definir a caixa de texto */
   border-radius: 5px; /* Adicionar bordas arredondadas */
 }
 .input-box i {
