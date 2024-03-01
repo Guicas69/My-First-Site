@@ -1,6 +1,6 @@
 .slice_pizza{
     position: absolute;
-    margin-left: -100px;
+    transform: translate(-15%, -5%);
     margin-top: 100px;
     width: 550px;
     height: 400px;
