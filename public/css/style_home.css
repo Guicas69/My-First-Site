@@ -8,10 +8,10 @@
 }
 .image_cardapio{
     position: absolute;
-    margin-left: 280px;
-    margin-top: 100px;
-    width: 550px;
-    height: 850px;
+    margin-left: 450px;
+    margin-top: 200px;
+    width: 600px;
+    height: 900px;
     border-radius: 5px;
 }
 .principal_title{
@@ -19,7 +19,6 @@
     margin-top: 50px;
     font-size: 75px;
     text-align: center;  
-    background-color: rgb(143, 201, 35)
 }
 .main_title{
     font-weight: bold;
@@ -27,19 +26,18 @@
     padding-left: 200px;
     margin-top: 50px;
     text-align: left;  
-    background-color: rgb(201, 35, 35)
+
 }
 .sub_title{
-    font-size: 20px;
+    font-size: 22px;
     padding-left: 200px;
     text-justify: auto;
     text-align: left;  
-    background-color: rgb(78, 53, 192)
+
 }
 .text_align{
     font-size: large;
     padding-left: 200px;
     text-justify: auto;
     text-align: left;    
-    background-color: rgb(185, 86, 169)
 }
