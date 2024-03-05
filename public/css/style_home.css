@@ -1,7 +1,6 @@
 .slice_pizza{
     position: absolute;
-    transform: translate(110%, -5%);
-    margin-top: 10px;
+    transform: translate(110%, 0%);
     width: 550px;
     height: 400px;
     border-radius: 5px;
@@ -40,4 +39,7 @@
     padding-left: 200px;
     text-justify: auto;
     text-align: left;    
+    text-indent: 30px;
+    word-spacing: 5px;
+    letter-spacing: 0.15mm;
 }
