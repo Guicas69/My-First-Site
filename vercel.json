@@ -4,17 +4,22 @@
         {
             "src": "index.js",
             "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "public/**"
-                ]
-            }
-        }
+            "config": { "includeFiles":["My-First-Site/**"]}
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static",
+            "config": { "includeFiles": ["My-First-Site/**"] }
+          }
     ],
     "routes": [
         {
-            "src": "/(.*)$",
+            "src": "My-First-Site/(.*)",
             "dest": "index.js"
+        },
+        {
+          "src": "/",
+          "dest": "My-First-Site/public/templates/home.html"
         }
     ]
 }
