@@ -1,29 +1,27 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles":["My-First-Site/**"]}
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static",
-            "config": { "includeFiles": ["My-First-Site/**"] }
-          }
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "public/css/*",
+        "use": "@vercel/static"
+      }
     ],
     "routes": [
-        {
-            "src": "My-First-Site/(.*)",
-            "dest": "index.js"
-        },
-        {
-          "src": "/(.+)",
-          "dest": "/My-First-Site/public/$1"
-        },
-        {
-            "src": "/",
-            "dest": "/My-First-Site/public/templates/home.html"
-          }
+      {
+        "src": "/(.+\\.html)",
+        "dest": "/My-First-Site/public/$1"
+      },
+      {
+        "src": "/",
+        "dest": "/My-First-Site/public/templates/home.html"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
     ]
-}
+  }
