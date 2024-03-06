@@ -18,8 +18,12 @@
             "dest": "index.js"
         },
         {
-          "src": "/",
-          "dest": "My-First-Site/public/templates/home.html"
-        }
+          "src": "/(.+)",
+          "dest": "/My-First-Site/public/$1"
+        },
+        {
+            "src": "/",
+            "dest": "/My-First-Site/public/templates/home.html"
+          }
     ]
 }
