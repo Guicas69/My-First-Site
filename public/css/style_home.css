@@ -17,6 +17,7 @@
     margin-top: 50px;
     font-size: 75px;
     text-align: center;  
+    background-color: rgb(255, 255, 255);
 }
 .main_title{
     font-weight: bold;
@@ -24,6 +25,7 @@
     padding-left: 200px;
     margin-top: 50px;
     text-align: left;  
+    background-color: rgb(255, 255, 255);
 
 }
 .sub_title{
@@ -31,7 +33,7 @@
     padding-left: 200px;
     text-justify: auto;
     text-align: left;  
-
+    background-color: rgb(255, 255, 255);
 }
 .text_align{
     font-size: large;
@@ -41,4 +43,5 @@
     text-indent: 30px;
     word-spacing: 5px;
     letter-spacing: 0.15mm;
+    background-color: rgb(255, 255, 255);
 }

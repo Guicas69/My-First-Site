@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 *
 {
-    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
 }
 
 body {
-  background: #fcfcfc;
+  background: #fafafa;
 }
 .container {
   position: fixed;
@@ -69,6 +68,10 @@ body {
   cursor: pointer;
   border-radius: 4px;
 }
+.container .Box:hover {
+  color: rgb(100, 175, 70);  
+  transition: 0s;
+}
 .background_image{
   position: relative;
   width: 100%;
@@ -97,5 +100,6 @@ body {
     left: 50%;
     font-weight: 550;  
     padding: 5px;
-  }
+
+}
 }
