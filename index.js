@@ -4,14 +4,17 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname+'/public/templates/landing_page.html'))
+})
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/login.html'))
 })
 app.get('/contact', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/contact.html'))
   })
-app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname+'/public/templates/home.html'))
+app.get('/menu', function (req, res) {
+    res.sendFile(path.join(__dirname+'/public/templates/menu.html'))
 })
 app.get('/create_account', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/create_account.html'))
