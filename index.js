@@ -5,7 +5,7 @@ const path = require('path')
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname+'/public/templates/landing_page.html'))
+    res.sendFile(path.join(__dirname+'/landing_page.html'))
 })
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/login.html'))
@@ -26,4 +26,4 @@ app.get('/save_info', function (req, res) {
     res.sendFile(path.join(__dirname+'/public/templates/save_info.html'))
 })
 
-app.listen(8000)
+app.listen(5500)
