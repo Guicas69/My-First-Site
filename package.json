@@ -1,17 +1,18 @@
 {
-  "name": "work",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo Hello",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "build": "[my-framework] build --output public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.10",
+    "@vercel/speed-insights": "^1.0.11",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2"
   }

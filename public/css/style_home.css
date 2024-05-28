@@ -9,7 +9,7 @@
 }
 .image_cardapio{
     position: absolute;
-    transform: translate(100%,30%);
+    transform: translate(100%,25%);
     width: 600px;
     height: 900px;
     border-radius: 5px;
