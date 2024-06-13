@@ -49,72 +49,76 @@
     </div>
   </div>
 
-  <body>
-    <div class="container-fluid" style="padding-top: 100px;">
+
+    <div class="container" style="padding-top: 100px;">
         <div class="row">
             <!-- Contact Form and Info Column -->
-            <div class="col-md-6">
+            <div class="col-lg-6 col-12">
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
                 <p class="text-sm-left w-responsive mx-auto mb-4">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of minutes to help you.</p>
 
                 <div class="row">
-                    <!-- Contact Form -->
-                    <div class="col-sm-9 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" action="public/templates/save_info.html" method="POST">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <input type="text" id="name" name="name" class="form-control">
-                                        <label for="name" class="">Your name</label>
+                    <div class=" col-8">
+                        <!-- Contact Form -->
+                        <div class="mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" action="save_info.html">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="name" class="">Your name</label>
+                                            <input type="text" id="name" name="name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="email" class="">Your email</label>
+                                            <input type="text" id="email" name="email" class="form-control">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <input type="text" id="email" name="email" class="form-control">
-                                        <label for="email" class="">Your email</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <label for="subject" class="">Subject</label>
+                                            <input type="text" id="subject" name="subject" class="form-control">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <label for="message">Your message</label>
+                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-center text-md-left">
+                                <a class="btn btn-dark mt-4" onclick="document.getElementById('contact-form').submit();">Send</a>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                        <input type="text" id="subject" name="subject" class="form-control">
-                                        <label for="subject" class="">Subject</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="md-form">
-                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                        <label for="message">Your message</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="text-center text-md-left">
-                            <a class="btn btn-dark" onclick="document.getElementById('contact-form').submit();">Send</a>
+                            <div class="status"></div>
                         </div>
-                        <div class="status"></div>
                     </div>
-                    <!-- Contact Info -->
-                    <div class="col-sm-3 contact-info text-center">
-                        <ul class="list-unstyled mb-0">
-                            <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                                <p>Quarteira, 8125-406, Portugal</p>
-                            </li>
-                            <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                                <p>+359 969 120 750</p>
-                            </li>
-                            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                                <p>contact@mdbootstrap.com</p>
-                            </li>
-                        </ul>
+                    <div class=" col-4">
+                        <!-- Contact Info -->
+                        <div class="contact-info text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                    <p>Quarteira, 8125-406, Portugal</p>
+                                </li>
+                                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                                    <p>+359 969 120 750</p>
+                                </li>
+                                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                    <p>contact@mdbootstrap.com</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- Image Column -->
-            <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
                 <img src="../images/local.png" class="local_pizza" alt="Local Pizza">
             </div>
         </div>
