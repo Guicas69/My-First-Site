@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Napoli Fuoco — Authentic Italian Pizza</title>
+  <link rel="stylesheet" href="public/css/shared.css"/>
+  <link rel="stylesheet" href="public/css/style_home.css"/>
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAVBAR  (same on every page)
+  ══════════════════════════════ -->
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">
+      Napoli Fuoco
+      <span>Authentic Italian</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="public/templates/menu.html">Menu</a>
+      <a href="public/templates/about.html">About</a>
+      <a href="public/templates/contact.html">Reservations</a>
+    </div>
+    <div class="nav-auth" id="navAuth">
+      <!-- Filled by auth.js -->
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       HERO SECTION
+  ══════════════════════════════ -->
+  <div class="page-wrap">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-img"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">Since 1987 · Naples, Italy</div>
+        <h1>Where Every Pizza<br/><em>Tells a Story</em></h1>
+        <p>Hand-crafted in our wood-fired oven using recipes passed down for generations. Taste the soul of Naples in every bite.</p>
+        <div class="hero-actions">
+          <a href="public/templates/menu.html" class="btn-primary">Explore Our Menu</a>
+          <a href="public/templates/contact.html" class="btn-ghost">Reserve a Table</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">35+</span><span class="lbl">Years</span></div>
+        <div class="hero-stat"><span class="num">42</span><span class="lbl">Recipes</span></div>
+        <div class="hero-stat"><span class="num">98%</span><span class="lbl">Happy Guests</span></div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY STRIP ── -->
+    <div class="gallery-strip">
+      <div class="g-item g-wide"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Pizza"/></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600&q=80" alt="Wood oven"/></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&q=80" alt="Margherita"/></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?w=600&q=80" alt="Restaurant"/></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Pasta"/></div>
+    </div>
+
+    <!-- ── FEATURED MENU ── -->
+    <section class="home-section">
+      <div class="section-label">From Our Kitchen</div>
+      <h2 class="section-title">Our Most <em>Loved</em> Pizzas</h2>
+      <p class="section-sub">Freshly baked in our wood-fired oven. Every pizza is a masterpiece.</p>
+
+      <div class="cards-grid">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80" alt="Margherita"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Margherita Classica</div>
+            <div class="menu-card-desc">San Marzano tomato, buffalo mozzarella, fresh basil, extra virgin olive oil</div>
+            <div class="menu-card-footer"><span class="menu-price">€13.50</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" alt="Diavola"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Diavola Piccante</div>
+            <div class="menu-card-desc">Spicy salami, fior di latte, San Marzano tomato, chilli flakes, capers</div>
+            <div class="menu-card-footer"><span class="menu-price">€15.00</span></div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" alt="Quattro Formaggi"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Quattro Formaggi</div>
+            <div class="menu-card-desc">Mozzarella, gorgonzola, pecorino, parmigiano reggiano, honey drizzle</div>
+            <div class="menu-card-footer"><span class="menu-price">€16.00</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="public/templates/menu.html" class="btn-primary">View Full Menu →</a>
+      </div>
+    </section>
+
+    <!-- ── ABOUT TEASER ── -->
+    <section class="home-section-alt">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <div class="about-img"></div>
+          <div class="about-badge">
+            <span class="yr">35</span>
+            <span class="tl">Years of<br/>Tradition</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Passion Baked into<br/>Every <em>Slice</em></h2>
+          <p class="section-sub">Born in Naples, raised on tradition. We brought the soul of Italian pizza to your city without compromising a single ingredient.</p>
+          <ul class="about-list">
+            <li>Imported "00" flour straight from Naples</li>
+            <li>San Marzano tomatoes from Mount Vesuvius</li>
+            <li>Fresh mozzarella di bufala, hand-pulled daily</li>
+            <li>Wood-fired oven reaching 485°C</li>
+          </ul>
+          <a href="public/templates/about.html" class="btn-primary" style="margin-top:2rem;">Discover Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="home-section">
+      <div class="section-label">What Guests Say</div>
+      <h2 class="section-title">Loved by Pizza <em>Lovers</em></h2>
+      <div class="testimonials-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Best pizza I've had outside of Naples. The dough is incredibly light and the toppings are just perfect. Will absolutely be back!"</p>
+          <div class="t-author">
+            <div class="t-avatar">MR</div>
+            <div><div class="t-name">Marco Rossi</div><div class="t-city">Lisbon</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"The atmosphere is warm, the service is impeccable, and the Quattro Formaggi had me speechless. A true gem in the city."</p>
+          <div class="t-author">
+            <div class="t-avatar">AS</div>
+            <div><div class="t-name">Ana Silva</div><div class="t-city">Porto</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Ordered delivery and was amazed how well it arrived! Still crispy, still amazing. Napoli Fuoco is my go-to for pizza nights."</p>
+          <div class="t-author">
+            <div class="t-avatar">JF</div>
+            <div><div class="t-name">João Ferreira</div><div class="t-city">Cascais</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <section class="cta-band">
+      <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.6);">Ready to dine?</div>
+      <h2>Reserve Your Table <em>Tonight</em></h2>
+      <p>Book online in seconds — dine-in or delivery, we've got you covered.</p>
+      <a href="public/templates/contact.html" class="btn-ghost">Make a Reservation</a>
+    </section>
+
+    <!-- ══════════════════════════════
+         FOOTER
+    ══════════════════════════════ -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Napoli <span>Fuoco</span></span>
+          <p>Authentic Neapolitan pizza crafted with love and served with passion since 1987. Every bite is a journey to Naples.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="public/templates/menu.html">Menu</a></li>
+            <li><a href="public/templates/about.html">About Us</a></li>
+            <li><a href="public/templates/contact.html">Reservations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li><span>Mon – Fri</span></li>
+            <li><span style="color:white;">12:00 – 22:00</span></li>
+            <li><span>Sat – Sun</span></li>
+            <li><span style="color:white;">11:00 – 23:00</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><span>📍 Rua da Pizza 42, Lisbon</span></li>
+            <li><span>📞 +351 21 345 6789</span></li>
+            <li><span>✉️ hello@napolifuoco.pt</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Napoli Fuoco. All rights reserved.</span>
+        <span>Made with ❤️ &amp; 🍕</span>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrap -->
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"><span id="toastMsg">Done!</span></div>
+
+  <script src="public/js/auth.js"></script>
+  <script src="public/js/main.js"></script>
+</body>
+</html>
