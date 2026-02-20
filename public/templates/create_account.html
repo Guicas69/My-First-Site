@@ -1,79 +1,129 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Pizza Time</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../css/style_create.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account — Napoli Fuoco</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <link rel="stylesheet" href="../css/style_login.css"/>
 </head>
-
 <body>
-	<div class="background_image">
-		<img class="background_image" src="../images/pizza_image.jpg">
-	</div>
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-      <a href="../templates/menu.html" class="w3-bar-item w3-button">Your favorite pizza !!!</a>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="../templates/menu.html" class="w3-bar-item w3-button">Menu</a>
-        <a href="../templates/login.html" class="w3-bar-item w3-button">Login</a>
-        <a href="../templates/create_account.html" class="w3-bar-item w3-button">Create account</a>
-        <a href="../templates/contact.html" class="w3-bar-item w3-button">Contact</a>
-        <a href="../templates/information.html" class="w3-bar-item w3-button">Information</a>
+
+  <div class="auth-page">
+
+    <!-- ── LEFT: VISUAL PANEL ── -->
+    <div class="auth-visual">
+      <div class="auth-visual-img"></div>
+      <div class="auth-visual-overlay"></div>
+
+      <a href="../../index.html" class="auth-visual-logo">
+        Napoli <span>Fuoco</span>
+      </a>
+
+      <div class="auth-visual-content">
+        <p class="auth-visual-quote">"Good food is the foundation of genuine <em>happiness</em>."</p>
+        <p class="auth-visual-sub">— Auguste Escoffier</p>
       </div>
     </div>
-  </div>
 
-	<div class="container" style="z-index: 1;">
+    <!-- ── RIGHT: FORM PANEL ── -->
+    <div class="auth-form-panel">
+      <div class="auth-form-wrap">
 
-		
-		<!-- Account creation form -->
+        <a href="../../index.html" class="auth-mobile-logo">Napoli Fuoco</a>
 
+        <h1 class="auth-heading">Create account</h1>
+        <p class="auth-subheading">Join us and start booking tables and ordering delivery.</p>
 
+        <div class="auth-form">
+          <!-- First + Last name on the same row -->
+          <div class="auth-name-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" id="regFirst" placeholder="Giovanni" autocomplete="given-name"/>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" id="regLast" placeholder="Conti" autocomplete="family-name"/>
+            </div>
+          </div>
 
-			<h2>Create Account</h2>
-			
-			<div class="input-box">
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="regEmail" placeholder="your@email.com" autocomplete="email"/>
+          </div>
 
-				<i class='bx bxs-user'></i>
-				<input type="text" placeholder="Name" required>
-			</div>
+          <div class="form-group">
+            <label>Password * <small style="color:var(--text-light); font-weight:400;">(min. 6 characters)</small></label>
+            <input type="password" id="regPassword" placeholder="Choose a strong password" autocomplete="new-password"/>
+          </div>
 
-			<div class="input-box">
+          <div class="form-group">
+            <label>Confirm Password *</label>
+            <input type="password" id="regConfirm" placeholder="Repeat your password" autocomplete="new-password"/>
+          </div>
 
-				<i class='bx bx-user-check'></i>
-				<input type="text" placeholder="Username" required>
-			</div>
+          <!-- Error/success message appears here -->
+          <div id="regError"></div>
 
-			<div class="input-box">
-				<i class='bx bx-envelope'></i>
-				<input type="email" placeholder="Email" required>
-			</div>
+          <button class="btn-submit" onclick="doRegister()">Create Account</button>
+        </div>
 
-			<div class="input-box">
-				<i class='bx bxs-lock-alt'></i>
-				<input type="password" placeholder="Password" required>
-			</div>
+        <p class="auth-switch">
+          Already have an account? <a href="login.html">Sign in</a>
+        </p>
 
-			<div class="input-box">
-				<i class='bx bxs-lock'></i>
-				<input type="password" placeholder="Confirm Password" required>
-			</div>
+      </div>
+    </div>
 
-			<div class="inputBox"> 
+  </div><!-- /auth-page -->
 
-				<a href="../templates/login.html" class="Box">Done</a> 
-			 
-			</div> 
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
 
-		</form>
-	</div>
-		
+  <script src="../js/auth.js"></script>
+  <script>
+    function doRegister() {
+      const first    = document.getElementById('regFirst').value.trim();
+      const last     = document.getElementById('regLast').value.trim();
+      const email    = document.getElementById('regEmail').value.trim().toLowerCase();
+      const password = document.getElementById('regPassword').value;
+      const confirm  = document.getElementById('regConfirm').value;
+      const errEl    = document.getElementById('regError');
 
+      /* ── Validation ── */
+      if (!first || !last || !email || !password || !confirm) {
+        errEl.innerHTML = '<div class="error-msg">Please fill in all required fields.</div>';
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.innerHTML = '<div class="error-msg">Please enter a valid email address.</div>';
+        return;
+      }
+      if (password.length < 6) {
+        errEl.innerHTML = '<div class="error-msg">Password must be at least 6 characters long.</div>';
+        return;
+      }
+      if (password !== confirm) {
+        errEl.innerHTML = '<div class="error-msg">Passwords do not match. Please check again.</div>';
+        return;
+      }
 
-	</div>
+      /* ── Check if email already registered ── */
+      const users = getUsers();
+      if (users.find(u => u.email === email)) {
+        errEl.innerHTML = '<div class="error-msg">An account with this email already exists. <a href="login.html" style="color:var(--red);">Sign in instead?</a></div>';
+        return;
+      }
+
+      /* ── Save new user ── */
+      const newUser = { first, last, email, password, createdAt: Date.now() };
+      users.push(newUser);
+      saveUsers(users);
+      setCurrentUser(newUser);
+
+      showToast('Account created! Welcome, ' + first + '! 🎉');
+      setTimeout(() => { window.location.href = '../../index.html'; }, 1200);
+    }
+  </script>
+</body>
+</html>

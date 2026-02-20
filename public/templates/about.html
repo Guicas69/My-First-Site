@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Napoli Fuoco</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <style>
+    /* About-specific styles — small enough to keep inline here */
+    .about-section { padding: 5rem 5%; }
+    .about-section-alt { padding: 5rem 5%; background: var(--cream-dark); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-img {
+      width: 100%; height: 460px; border-radius: 20px;
+      object-fit: cover; box-shadow: var(--shadow-lg); display: block;
+      background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80') center/cover;
+    }
+    .about-img-wrap { position: relative; }
+    .about-badge {
+      position: absolute; bottom: -18px; right: -18px;
+      width: 130px; height: 130px; border-radius: 50%;
+      background: var(--red); color: white;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+    }
+    .about-badge .yr { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; line-height: 1; }
+    .about-badge .tl { font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; }
+    .about-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .about-list li { display: flex; align-items: center; gap: 12px; font-size: 0.94rem; }
+    .about-list li::before { content: '🍕'; flex-shrink: 0; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .team-card { background: white; border-radius: var(--radius); padding: 1.5rem; text-align: center; box-shadow: var(--shadow); }
+    .team-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; }
+    .team-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--brown); }
+    .team-role { font-size: 0.75rem; color: var(--red); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+    .about-hero { background: linear-gradient(135deg, var(--brown), #1a0a04); padding: 5rem 5% 4rem; text-align: center; }
+    .about-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 900; color: white; margin-bottom: 0.75rem; }
+    .about-hero h1 em { font-style: italic; color: var(--gold); }
+    .about-hero p { color: rgba(255,255,255,0.65); max-width: 460px; margin: 0 auto; }
+    .about-hero .section-label { justify-content: center; color: var(--gold); }
+    .about-hero .section-label::before { background: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a class="nav-logo" href="../../index.html">
+      Napoli Fuoco
+      <span>Authentic Italian</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Reservations</a>
+    </div>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="about-hero">
+      <div class="section-label">Our Heritage</div>
+      <h1>From Naples<br/>to Your <em>Table</em></h1>
+      <p>Three generations of pizza mastery — and still going.</p>
+    </div>
+
+    <!-- OUR STORY -->
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <div class="about-img"></div>
+          <div class="about-badge">
+            <span class="yr">1987</span>
+            <span class="tl">Founded</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-label">The Beginning</div>
+          <h2 class="section-title">Born in the Heart<br/>of <em>Naples</em></h2>
+          <p class="section-sub">It all began with Nonno Giuseppe, a third-generation pizza maker in the Spaccanapoli quarter of Naples. In 1987, he packed his secret dough recipe and brought authentic Neapolitan pizza to the world.</p>
+          <p style="margin-top:1rem; color:var(--text-light); line-height:1.75;">Today his grandchildren run the restaurant with the same passion, the same wood-fired oven, and the same uncompromising respect for ingredients that made Nonno famous in his neighbourhood.</p>
+          <ul class="about-list">
+            <li>Certified by the Associazione Verace Pizza Napoletana</li>
+            <li>All dough fermented for minimum 48 hours</li>
+            <li>No freezers — everything fresh, every day</li>
+            <li>Seasonal menu that changes with the local market</li>
+            <li>Family-run for three generations</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:2rem;">Book a Table</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR TEAM -->
+    <section class="about-section-alt">
+      <div style="text-align:center;">
+        <div class="section-label" style="justify-content:center;">Meet the Crew</div>
+        <h2 class="section-title">The Hands Behind<br/>Every <em>Pizza</em></h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img class="team-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=200&q=80" alt="Giuseppe"/>
+          <div class="team-name">Giuseppe Jr.</div>
+          <div class="team-role">Head Pizzaiolo</div>
+        </div>
+        <div class="team-card">
+          <img class="team-avatar" src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=200&q=80" alt="Sofia"/>
+          <div class="team-name">Sofia Conti</div>
+          <div class="team-role">Sous Chef</div>
+        </div>
+        <div class="team-card">
+          <img class="team-avatar" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=80" alt="Luca"/>
+          <div class="team-name">Luca Bianchi</div>
+          <div class="team-role">Pasta Maestro</div>
+        </div>
+        <div class="team-card">
+          <img class="team-avatar" src="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=200&q=80" alt="Maria"/>
+          <div class="team-name">Maria Esposito</div>
+          <div class="team-role">Pastry Chef</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Napoli <span>Fuoco</span></span>
+          <p>Authentic Neapolitan pizza crafted with love and served with passion since 1987.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Reservations</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Hours</h4><ul>
+          <li><span>Mon – Fri: 12–22h</span></li>
+          <li><span>Sat – Sun: 11–23h</span></li>
+        </ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><span>📍 Rua da Pizza 42, Lisbon</span></li>
+          <li><span>📞 +351 21 345 6789</span></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Napoli Fuoco.</span><span>Made with ❤️ &amp; 🍕</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

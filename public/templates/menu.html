@@ -1,96 +1,279 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Pizza Time</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/style_home.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <style>
-    body {
-      font-family: "Times New Roman", Georgia, Serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Playfair Display";
-      letter-spacing: 2.5px;
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu — Napoli Fuoco</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <link rel="stylesheet" href="../css/style_menu.css"/>
 </head>
-
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-      <a href="../templates/menu.html" class="w3-bar-item w3-button">Your favorite pizza !!!</a>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="../templates/login.html" class="w3-bar-item w3-button">Login</a>
-        <a href="../templates/create_account.html" class="w3-bar-item w3-button">Create account</a>
-        <a href="../templates/contact.html" class="w3-bar-item w3-button">Contact</a>
-        <a href="../templates/information.html" class="w3-bar-item w3-button">Information</a>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a class="nav-logo" href="../../index.html">
+      Napoli Fuoco
+      <span>Authentic Italian</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Reservations</a>
+    </div>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- HERO -->
+    <div class="menu-hero">
+      <div class="section-label">What We Serve</div>
+      <h1>Our Full <em>Menu</em></h1>
+      <p>Every dish crafted with love using only the finest Italian ingredients.</p>
+    </div>
+
+    <!-- STICKY CATEGORY TABS -->
+    <div class="menu-tabs-wrap">
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="showCategory('pizza', this)">🍕 Pizzas</button>
+        <button class="menu-tab" onclick="showCategory('pasta', this)">🍝 Pasta</button>
+        <button class="menu-tab" onclick="showCategory('antipasti', this)">🥗 Antipasti</button>
+        <button class="menu-tab" onclick="showCategory('dolci', this)">🍮 Dolci</button>
+        <button class="menu-tab" onclick="showCategory('drinks', this)">🍷 Drinks</button>
       </div>
     </div>
-  </div>
 
-  <!-- Menu Section -->
+    <!-- ── PIZZAS ── -->
+    <section class="menu-section menu-category visible" id="cat-pizza">
+      <div class="menu-category-title">Pizzas</div>
+      <div class="menu-category-desc">Baked in our 485°C wood-fired oven. All bases use 48-hour fermented dough.</div>
+      <div class="menu-grid">
 
-  <div class="image_cardapio">
-    <img src="../images/menu-pizza.jpg" class="image_cardapio">
-  </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80" alt="Margherita"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Margherita Classica</div>
+            <div class="menu-card-desc">San Marzano tomato, buffalo mozzarella, fresh basil, extra virgin olive oil</div>
+            <div class="menu-card-footer"><span class="menu-price">€13.50</span><button class="btn-add" onclick="addToCart('Margherita Classica', 13.50)">+</button></div>
+          </div>
+        </div>
 
-    <div style="padding-top: 100px; padding-left: 50px;">
-      <h1 class="principal_title" style= "justify-self: center;">Our Menu</h1><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" alt="Diavola"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Diavola Piccante</div>
+            <div class="menu-card-desc">Spicy salami, fior di latte, San Marzano tomato, chilli flakes, capers</div>
+            <div class="menu-card-footer"><span class="menu-price">€15.00</span><button class="btn-add" onclick="addToCart('Diavola Piccante', 15.00)">+</button></div>
+          </div>
+        </div>
 
-      <h2 class="main_title" style= "padding-left: 200px;">REGULAR PIZZAS</h2><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" alt="Quattro Formaggi"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Quattro Formaggi</div>
+            <div class="menu-card-desc">Mozzarella, gorgonzola, pecorino, parmigiano reggiano, honey drizzle</div>
+            <div class="menu-card-footer"><span class="menu-price">€16.00</span><button class="btn-add" onclick="addToCart('Quattro Formaggi', 16.00)">+</button></div>
+          </div>
+        </div>
 
-      <h4 class="sub_title">Margherita Pizza</h4>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Prosciutto"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Prosciutto e Funghi</div>
+            <div class="menu-card-desc">San Marzano, mozzarella, Parma ham, porcini mushrooms, thyme</div>
+            <div class="menu-card-footer"><span class="menu-price">€16.50</span><button class="btn-add" onclick="addToCart('Prosciutto e Funghi', 16.50)">+</button></div>
+          </div>
+        </div>
 
-      <p class="text_align">Fresh mozzarella, tomato sauce and basil;</p><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" alt="Vegetariana"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Vegetariana</div>
+            <div class="menu-card-desc">Grilled aubergine, courgette, peppers, olives, mozzarella, basil pesto</div>
+            <div class="menu-card-footer"><span class="menu-price">€14.50</span><button class="btn-add" onclick="addToCart('Vegetariana', 14.50)">+</button></div>
+          </div>
+        </div>
 
-      <h4 class="sub_title">Pepperoni Pizza</h4>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=500&q=80" alt="Napoli DOC"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Napoli DOC</div>
+            <div class="menu-card-desc">San Marzano, anchovies, capers, olives, oregano, buffalo mozzarella</div>
+            <div class="menu-card-footer"><span class="menu-price">€15.50</span><button class="btn-add" onclick="addToCart('Napoli DOC', 15.50)">+</button></div>
+          </div>
+        </div>
 
-      <p class="text_align">Tomato sauce, mozzarella cheese and pepperoni;</p><br>
+      </div>
+    </section>
 
-      <h4 class="sub_title">Hawaiian Pizza</h4>
+    <!-- ── PASTA ── -->
+    <section class="menu-section menu-category" id="cat-pasta">
+      <div class="menu-category-title">Pasta</div>
+      <div class="menu-category-desc">Made fresh daily. No cream in our carbonara — ever.</div>
+      <div class="menu-grid">
 
-      <p class="text_align">Tomato sauce, mozzarella cheese, ham and pineapple;</p><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=500&q=80" alt="Carbonara"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Spaghetti Carbonara</div>
+            <div class="menu-card-desc">Guanciale, egg yolk, pecorino romano, black pepper — no cream</div>
+            <div class="menu-card-footer"><span class="menu-price">€14.00</span><button class="btn-add" onclick="addToCart('Carbonara', 14.00)">+</button></div>
+          </div>
+        </div>
 
-      <h4 class="sub_title">Meat Lover's Pizza</h4>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=500&q=80" alt="Amatriciana"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Rigatoni all'Amatriciana</div>
+            <div class="menu-card-desc">Guanciale, San Marzano tomato, pecorino, white wine, chilli</div>
+            <div class="menu-card-footer"><span class="menu-price">€13.50</span><button class="btn-add" onclick="addToCart('Amatriciana', 13.50)">+</button></div>
+          </div>
+        </div>
 
-      <p class="text_align">Tomato sauce, mozzarella cheese, pepperoni, sausage, bacon and ham.</p><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=500&q=80" alt="Vongole"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Linguine alle Vongole</div>
+            <div class="menu-card-desc">Fresh clams, white wine, garlic, parsley, chilli, extra virgin olive oil</div>
+            <div class="menu-card-footer"><span class="menu-price">€18.00</span><button class="btn-add" onclick="addToCart('Vongole', 18.00)">+</button></div>
+          </div>
+        </div>
 
-      <h2 class="main_title" style= "padding-left: 200px;">SPECIALTY PIZZAS</h2><br>
+      </div>
+    </section>
 
-      <h4 class="sub_title">BBQ Chicken Pizza</h4>
+    <!-- ── ANTIPASTI ── -->
+    <section class="menu-section menu-category" id="cat-antipasti">
+      <div class="menu-category-title">Antipasti</div>
+      <div class="menu-category-desc">The perfect start to your Italian journey.</div>
+      <div class="menu-grid">
 
-      <p class="text_align">BBQ sauce, mozarrella cheese, grilled chicken, red onions & cilantro;</p><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=500&q=80" alt="Bruschetta"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Bruschetta al Pomodoro</div>
+            <div class="menu-card-desc">Toasted sourdough, San Marzano tomatoes, garlic, basil, aged balsamic</div>
+            <div class="menu-card-footer"><span class="menu-price">€7.50</span><button class="btn-add" onclick="addToCart('Bruschetta', 7.50)">+</button></div>
+          </div>
+        </div>
 
-      <h4 class="sub_title">White Pizza</h4>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=80" alt="Burrata"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Burrata e Prosciutto</div>
+            <div class="menu-card-desc">Creamy burrata, San Daniele prosciutto, rocket, cherry tomatoes</div>
+            <div class="menu-card-footer"><span class="menu-price">€13.00</span><button class="btn-add" onclick="addToCart('Burrata', 13.00)">+</button></div>
+          </div>
+        </div>
 
-      <p class="text_align">Mozarrella cheese, ricotta cheese, garlic and spinach;</p><br>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1548869206-93b036bcbc18?w=500&q=80" alt="Arancini"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Arancini Siciliani</div>
+            <div class="menu-card-desc">Three crispy rice balls, ragù bolognese, mozzarella, arrabiata sauce</div>
+            <div class="menu-card-footer"><span class="menu-price">€9.00</span><button class="btn-add" onclick="addToCart('Arancini', 9.00)">+</button></div>
+          </div>
+        </div>
 
-      <h4 class="sub_title">Buffalo Chicken Pizza</h4>
+      </div>
+    </section>
 
-      <p class="text_align">Buffalo sauce, mozarella cheese, grilled chicken, red onions & blue cheese crumbles;</p>
-      <br>
+    <!-- ── DOLCI ── -->
+    <section class="menu-section menu-category" id="cat-dolci">
+      <div class="menu-category-title">Dolci</div>
+      <div class="menu-category-desc">End your meal the Italian way — sweet, creamy, unforgettable.</div>
+      <div class="menu-grid">
 
-      <h4 class="sub_title">Pesto Pizza</h4>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&q=80" alt="Tiramisu"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Tiramisù della Casa</div>
+            <div class="menu-card-desc">Espresso-soaked savoiardi, mascarpone cream, cocoa — Nonno's recipe</div>
+            <div class="menu-card-footer"><span class="menu-price">€7.00</span><button class="btn-add" onclick="addToCart('Tiramisù', 7.00)">+</button></div>
+          </div>
+        </div>
 
-      <p class="text_align">Pesto sauce, mozzarella cheese, sun-dried tomatoes, and chicken.</p><br>
-    </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?w=500&q=80" alt="Panna Cotta"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Panna Cotta ai Frutti</div>
+            <div class="menu-card-desc">Vanilla panna cotta, seasonal berry coulis, pistachio crumble</div>
+            <div class="menu-card-footer"><span class="menu-price">€6.50</span><button class="btn-add" onclick="addToCart('Panna Cotta', 6.50)">+</button></div>
+          </div>
+        </div>
 
-  <hr>
+      </div>
+    </section>
 
-  </div>
+    <!-- ── DRINKS ── -->
+    <section class="menu-section menu-category" id="cat-drinks">
+      <div class="menu-category-title">Drinks</div>
+      <div class="menu-category-desc">Italian classics to complement your meal.</div>
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500&q=80" alt="Aperol"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Aperol Spritz</div>
+            <div class="menu-card-desc">Aperol, Prosecco, sparkling water, orange slice, ice</div>
+            <div class="menu-card-footer"><span class="menu-price">€9.00</span><button class="btn-add" onclick="addToCart('Aperol Spritz', 9.00)">+</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80" alt="Wine"/>
+          <div class="menu-card-body">
+            <div class="menu-card-title">Chianti Classico</div>
+            <div class="menu-card-desc">Glass of Chianti Classico DOCG, Tuscany — pairs perfectly with any pizza</div>
+            <div class="menu-card-footer"><span class="menu-price">€7.50</span><button class="btn-add" onclick="addToCart('Chianti Classico', 7.50)">+</button></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Napoli <span>Fuoco</span></span>
+          <p>Authentic Neapolitan pizza crafted with love and served with passion since 1987.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Reservations</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Hours</h4><ul>
+          <li><span>Mon – Fri: 12–22h</span></li>
+          <li><span>Sat – Sun: 11–23h</span></li>
+        </ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><span>📍 Rua da Pizza 42, Lisbon</span></li>
+          <li><span>📞 +351 21 345 6789</span></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Napoli Fuoco.</span><span>Made with ❤️ &amp; 🍕</span>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrap -->
+
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    /* Show/hide category sections when tabs are clicked */
+    function showCategory(id, btn) {
+      document.querySelectorAll('.menu-category').forEach(s => s.classList.remove('visible'));
+      document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById('cat-' + id).classList.add('visible');
+      btn.classList.add('active');
+    }
+  </script>
 </body>
-
 </html>

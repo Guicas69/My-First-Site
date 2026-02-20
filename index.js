@@ -1,31 +1,46 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path')
 
 const app = express()
-const path = require('path')
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname+'/landing_page.html'));
-})
-app.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname+'login.html'));
-})
-app.get('/contact', function (req, res) {
-    res.sendFile(path.join(__dirname+'contact.html'));
-  })
-app.get('/menu', function (req, res) {
-    res.sendFile(path.join(__dirname+'menu.html'));
-})
-app.get('/create_account', function (req, res) {
-    res.sendFile(path.join(__dirname+'create_account.html'));
-})
-app.get('/information', function (req, res) {
-    res.sendFile(path.join(__dirname+'information.html'));
-})
-app.get('/save_info', function (req, res) {
-    res.sendFile(path.join(__dirname+'save_info.html'));
-})
+/* ── Main routes — one per HTML page ── */
 
-app.listen(5500)
+/* Home page */
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'landing_page.html'));
+  });
+  
+  /* Menu page */
+  app.get('/menu', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/templates/menu.html'));
+  });
+  
+  /* Contact / Reservations page */
+  app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/templates/contact.html'));
+  });
+  
+  /* About page */
+  app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/templates/about.html'));
+  });
+  
+  /* Login page */
+  app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/templates/login.html'));
+  });
+  
+  /* Register / Create account page */
+  app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/templates/create_account.html'));
+  });
+  
+  /* ── Start the server ── */
+  app.listen(PORT, () => {
+    console.log(`✅ Napoli Fuoco server running at http://localhost:${PORT}`);
+  });
+  

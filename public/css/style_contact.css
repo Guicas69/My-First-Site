@@ -1,0 +1,139 @@
+/* ============================================
+   style_contact.css
+   Styles ONLY for contact.html
+   ============================================ */
+
+/* ── PAGE HERO ── */
+.contact-hero {
+  background: linear-gradient(135deg, var(--brown) 0%, #1a0a04 100%);
+  padding: 5rem 5% 5rem; text-align: center;
+}
+.contact-hero .section-label { justify-content: center; color: var(--gold); }
+.contact-hero .section-label::before { background: var(--gold); }
+.contact-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 900;
+  color: white; margin-bottom: 0.75rem;
+}
+.contact-hero h1 em { font-style: italic; color: var(--gold); }
+.contact-hero p { color: rgba(255,255,255,0.65); max-width: 460px; margin: 0 auto; }
+
+/* ── TAB SWITCHER ── */
+.contact-tabs {
+  display: flex; width: fit-content;
+  margin: -26px auto 0; position: relative; z-index: 10;
+  background: white; border-radius: 50px; box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.contact-tab {
+  padding: 14px 36px; border: none; background: transparent;
+  font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; transition: all .25s; color: var(--text-light);
+}
+.contact-tab.active { background: var(--red); color: white; border-radius: 50px; }
+
+/* ── MAIN CONTENT WRAPPER ── */
+.contact-body { padding: 3.5rem 5%; max-width: 960px; margin: 0 auto; }
+
+/* ── RESERVATION FORM CARD ── */
+.form-card {
+  background: white; border-radius: 20px; padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+.form-card h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--brown); margin-bottom: 0.3rem; }
+.form-card .subtitle { font-size: 0.9rem; color: var(--text-light); margin-bottom: 2rem; }
+
+.form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-full { grid-column: 1 / -1; }
+@media (max-width: 600px) { .form-two-col { grid-template-columns: 1fr; } }
+
+/* ── SUCCESS CARD ── */
+.success-card {
+  background: white; border-radius: 20px; padding: 3.5rem; text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.success-card h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--brown); margin-bottom: 0.75rem; }
+.success-card p { color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem; }
+
+/* ── INFO CARDS ROW ── */
+.info-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 1rem; margin-top: 1.5rem; }
+.info-card { background: white; border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+.info-card .icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.info-card h4 { font-size: 0.82rem; font-weight: 700; color: var(--brown); margin-bottom: 4px; }
+.info-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
+
+/* ══════════════════════════════════
+   DELIVERY SECTION
+══════════════════════════════════ */
+.delivery-header {
+  background: white; border-radius: var(--radius); padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.delivery-header h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--brown); }
+.delivery-header p { font-size: 0.85rem; color: var(--text-light); margin-top: 3px; }
+.online-badge { display: flex; align-items: center; gap: 8px; }
+.online-dot { width: 9px; height: 9px; border-radius: 50%; background: #27ae60; flex-shrink: 0; }
+.online-text { font-size: 0.85rem; color: var(--green); font-weight: 600; }
+
+/* ── DELIVERY LAYOUT ── */
+.delivery-layout { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; }
+@media (max-width: 860px) { .delivery-layout { grid-template-columns: 1fr; } }
+
+/* ── PIZZA ROWS ── */
+.pizza-row {
+  background: white; border-radius: var(--radius); padding: 1.1rem 1.2rem;
+  display: flex; gap: 1rem; align-items: center; box-shadow: var(--shadow);
+  margin-bottom: 0.9rem;
+}
+.pizza-row img {
+  width: 78px; height: 78px; border-radius: 10px;
+  object-fit: cover; flex-shrink: 0; background: var(--cream-dark);
+}
+.pizza-info { flex: 1; min-width: 0; }
+.pizza-name { font-weight: 700; font-size: 0.97rem; color: var(--brown); }
+.pizza-desc { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; line-height: 1.4; }
+.pizza-price { font-size: 0.97rem; font-weight: 700; color: var(--red); margin-top: 6px; }
+.qty-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.qty-btn {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--cream-dark); background: var(--cream);
+  color: var(--text); font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all .2s;
+}
+.qty-btn:hover { border-color: var(--red); color: var(--red); }
+.qty-num { font-weight: 700; min-width: 18px; text-align: center; font-size: 0.95rem; }
+
+/* ── ORDER CART ── */
+.order-cart {
+  background: white; border-radius: var(--radius); padding: 1.4rem;
+  box-shadow: var(--shadow); position: sticky; top: 90px; height: fit-content;
+}
+.cart-title {
+  font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--brown); margin-bottom: 1.1rem;
+  padding-bottom: 0.75rem; border-bottom: 1.5px solid var(--cream-dark);
+}
+.cart-empty { text-align: center; padding: 1.25rem 0; color: var(--text-light); font-size: 0.88rem; line-height: 1.6; }
+.cart-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--cream-dark); font-size: 0.88rem;
+}
+.cart-item-name { color: var(--text); font-weight: 500; }
+.cart-item-price { color: var(--red); font-weight: 700; flex-shrink: 0; margin-left: 8px; }
+.cart-remove { background: none; border: none; color: var(--text-light); cursor: pointer; font-size: 1rem; padding: 0 4px; }
+.cart-remove:hover { color: var(--red); }
+.cart-total {
+  display: flex; justify-content: space-between;
+  font-weight: 700; font-size: 1rem; color: var(--brown);
+  margin-top: 0.85rem; padding-top: 0.75rem; border-top: 2px solid var(--cream-dark);
+}
+.cart-field { margin-top: 1rem; }
+.cart-field label { font-size: 0.8rem; font-weight: 600; color: var(--brown); display: block; margin-bottom: 6px; }
+.cart-field input {
+  width: 100%; border: 1.5px solid #E0D8CF; border-radius: 10px;
+  padding: 10px 14px; font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+  color: var(--text); background: var(--cream); outline: none; transition: border-color .2s;
+}
+.cart-field input:focus { border-color: var(--red); }

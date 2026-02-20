@@ -1,62 +1,279 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Pizza Time</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Italy Pizza — Authentic Wood-Fired Pizza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
-	<link rel="stylesheet" href="../css/style_home.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/shared.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: url('public/images/image.jpg') center 30% / cover no-repeat;
+      animation: zoomIn 14s ease-out forwards;
+    }
+    @keyframes zoomIn { from { transform: scale(1.08); } to { transform: scale(1); } }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(105deg, rgba(10,8,3,.92) 0%, rgba(10,8,3,.60) 55%, rgba(10,8,3,.18) 100%);
+    }
+    .hero-fade {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      height: 220px; background: linear-gradient(to bottom, transparent, var(--dark));
+    }
+    .hero-content { position: relative; z-index: 3; padding: 0 5%; max-width: 780px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .74rem; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 1.5rem;
+      opacity: 0; animation: up .6s .2s ease forwards;
+    }
+    .hero-eyebrow::before { content:''; width:36px; height:1px; background:var(--gold); }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7.5vw, 6.2rem); font-weight: 700; line-height: 1;
+      color: white; margin-bottom: 1.5rem;
+      opacity: 0; animation: up .7s .35s ease forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+    .hero-desc {
+      font-size: clamp(.98rem, 1.5vw, 1.12rem); color: var(--muted);
+      line-height: 1.78; max-width: 460px; margin-bottom: 2.5rem;
+      opacity: 0; animation: up .7s .5s ease forwards;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: up .7s .65s ease forwards; }
+    .hero-stats {
+      position: absolute; bottom: 4rem; right: 5%; z-index: 3;
+      display: flex; gap: 2.5rem;
+      opacity: 0; animation: up .7s .8s ease forwards;
+    }
+    .hero-stat .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; font-weight: 700; color: white; display: block; line-height: 1;
+    }
+    .hero-stat .num em { color: var(--gold); font-style: normal; }
+    .hero-stat .lbl { font-size: .66rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-top: 5px; display: block; }
+    .scroll-arrow-wrap {
+      position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 5px;
+      opacity: 0; animation: fadeIn 1s 1.2s ease forwards;
+    }
+    .scroll-arrow-wrap span { font-size: .62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+    .scroll-arrow { width:18px; height:18px; border-right:1.5px solid var(--gold); border-bottom:1.5px solid var(--gold); transform:rotate(45deg); animation:bounce 1.6s infinite; }
+    @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
+    @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    /* ── FEATURES STRIP ── */
+    .features-strip { background: var(--dark-mid); padding: 2.5rem 5%; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .feat { display: flex; align-items: center; gap: 14px; }
+    .feat-icon { width:46px; height:46px; border-radius:12px; background:rgba(212,160,32,.1); border:1px solid var(--border-gold); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+    .feat-title { font-weight:700; font-size:.94rem; color:white; }
+    .feat-sub { font-size:.76rem; color:var(--muted); margin-top:2px; }
+
+    /* ── ABOUT ── */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; max-width:1200px; margin:0 auto; }
+    @media(max-width:900px){ .about-grid{grid-template-columns:1fr;gap:3rem;} }
+    .about-frame { position:relative; }
+    .about-img {
+      width:100%; height:480px; border-radius:20px; display:block;
+      background: url('public/images/image.jpg') center / cover;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-frame::before { content:''; position:absolute; top:-16px; left:-16px; width:72px; height:72px; border-top:3px solid var(--gold); border-left:3px solid var(--gold); border-radius:4px; }
+    .about-frame::after  { content:''; position:absolute; bottom:-16px; right:-16px; width:72px; height:72px; border-bottom:3px solid var(--gold); border-right:3px solid var(--gold); border-radius:4px; }
+    .about-badge {
+      position:absolute; top:-18px; right:-18px;
+      width:108px; height:108px; border-radius:50%; background:var(--red);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      box-shadow:0 8px 24px rgba(200,57,26,.4); border:3px solid var(--dark);
+    }
+    .about-badge .yr { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; line-height:1; }
+    .about-badge .tl { font-size:.56rem; letter-spacing:1.5px; text-transform:uppercase; opacity:.85; text-align:center; }
+    .check-list { list-style:none; margin:1.25rem 0 2rem; display:flex; flex-direction:column; gap:.75rem; }
+    .check-list li { display:flex; align-items:center; gap:12px; font-size:.93rem; color:rgba(255,255,255,.8); }
+    .check-icon { width:26px; height:26px; border-radius:50%; background:rgba(212,160,32,.1); border:1px solid var(--border-gold); display:flex; align-items:center; justify-content:center; font-size:.75rem; color:var(--gold); flex-shrink:0; }
+
+    /* ── MENU CARDS ── */
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.5rem; max-width:1200px; margin:2.5rem auto 0; }
+    .menu-card { background:var(--dark-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform .3s,border-color .3s,box-shadow .3s; }
+    .menu-card:hover { transform:translateY(-6px); border-color:var(--border-gold); box-shadow:var(--shadow-lg); }
+    .menu-card img { width:100%; height:180px; object-fit:cover; display:block; }
+    .card-body { padding:1.2rem; }
+    .card-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:700; color:white; margin-bottom:.3rem; }
+    .card-desc { font-size:.82rem; color:var(--muted); line-height:1.55; margin-bottom:1rem; }
+    .card-foot { display:flex; justify-content:space-between; align-items:center; }
+    .card-price { font-size:1rem; font-weight:700; color:var(--gold); }
+    .btn-plus { background:var(--red); color:white; border:none; width:30px; height:30px; border-radius:50%; font-size:1rem; cursor:pointer; transition:all .2s; display:flex; align-items:center; justify-content:center; }
+    .btn-plus:hover { background:var(--red-dark); transform:scale(1.12); }
+
+    /* ── TESTIMONIALS ── */
+    .t-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; max-width:1200px; margin:2.5rem auto 0; }
+    .t-card { background:var(--dark-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; transition:border-color .2s; }
+    .t-card:hover { border-color:var(--border-gold); }
+    .t-stars { color:var(--gold); letter-spacing:3px; margin-bottom:.85rem; font-size:.9rem; }
+    .t-text { font-size:.92rem; color:rgba(255,255,255,.62); line-height:1.7; font-style:italic; margin-bottom:1.1rem; }
+    .t-author { display:flex; align-items:center; gap:10px; }
+    .t-av { width:36px; height:36px; border-radius:50%; background:var(--red); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.78rem; flex-shrink:0; }
+    .t-name { font-weight:600; font-size:.86rem; color:white; }
+    .t-city { font-size:.74rem; color:var(--muted); }
+
+    /* ── CTA BAND ── */
+    .cta-band { position:relative; overflow:hidden; padding:6rem 5%; text-align:center; background:linear-gradient(135deg,#1a0600,#2d0e00 50%,#1a0600); border-top:1px solid rgba(200,57,26,.2); }
+    .cta-band::before { content:''; position:absolute; inset:0; background:url('public/images/image.jpg') center/cover; opacity:.07; }
+    .cta-inner { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+    .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,2.8rem); font-weight:700; color:white; margin-bottom:.75rem; }
+    .cta-band h2 em { font-style:italic; color:var(--gold); }
+    .cta-band p { color:var(--muted); margin-bottom:2rem; }
+    .cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+    @media(max-width:768px){ .hero-stats{display:none;} }
+    @media(max-width:576px){ .hero-actions{flex-direction:column;} }
+  </style>
 </head>
+<body>
 
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-brand" href="landing_page.html">
+    <img src="public/images/icon.jpg" alt="Italy Pizza"/>
+    Italy <span>Pizza</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" href="landing_page.html">Home</a>
+    <a class="nav-link" href="public/templates/menu.html">Menu</a>
+    <a class="nav-link" href="public/templates/information.html">About</a>
+    <a class="nav-link" href="public/templates/contact.html">Reservations</a>
+  </div>
+  <div class="nav-auth" id="navAuth"></div>
+</nav>
 
+<div class="page-wrap" style="padding-top:0;">
 
-<body>  
-  <nav class="navbar navbar-expand-xxl navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../templates/information.html">
-        <img src="../images/icon.jpg" alt="0" width="80" height="50" class="d-inline-block align-text-middle">
-        Italy Pizza 
-      </a>
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../templates/login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="../templates/create_account.html">Create Account</a>
-          </li>
-          <div class="btn-group dropstart">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuClickableInside">
-              <li><a class="dropdown-item" href="../templates/menu.html">Menu</a></li>
-              <li><a class="dropdown-item" href="../templates/information.html">Information</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="../templates/contact.html">Contact Us...</a></li>
-            </ul>
-          </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Since 1987 · Naples, Italy</div>
+      <h1>Welcome to Your<br/><em>Favourite Restaurant</em></h1>
+      <p class="hero-desc">Here you will get every type of pizza you choose — hand-crafted in our authentic wood-fired oven, using recipes passed down through three generations.</p>
+      <div class="hero-actions">
+        <a href="public/templates/menu.html" class="btn-primary">Explore Our Menu</a>
+        <a href="public/templates/contact.html" class="btn-outline-gold">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">35<em>+</em></span><span class="lbl">Years</span></div>
+      <div class="hero-stat"><span class="num">42</span><span class="lbl">Recipes</span></div>
+      <div class="hero-stat"><span class="num">485<em>°</em></span><span class="lbl">Oven Temp</span></div>
+    </div>
+    <div class="scroll-arrow-wrap"><span>Scroll</span><div class="scroll-arrow"></div></div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="features-strip">
+    <div class="features-grid">
+      <div class="feat"><div class="feat-icon">🔥</div><div><div class="feat-title">Wood-Fired Oven</div><div class="feat-sub">485°C authentic heat</div></div></div>
+      <div class="feat"><div class="feat-icon">🌿</div><div><div class="feat-title">Fresh Ingredients</div><div class="feat-sub">Sourced daily, never frozen</div></div></div>
+      <div class="feat"><div class="feat-icon">🛵</div><div><div class="feat-title">Fast Delivery</div><div class="feat-sub">30–45 min to your door</div></div></div>
+      <div class="feat"><div class="feat-icon">📅</div><div><div class="feat-title">Easy Reservations</div><div class="feat-sub">Book your table online</div></div></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-frame">
+        <div class="about-img"></div>
+        <div class="about-badge"><span class="yr">1987</span><span class="tl">Est.</span></div>
+      </div>
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h2 class="section-title">Passion Baked Into<br/>Every <em>Slice</em></h2>
+        <p class="section-sub">Born in Naples, our story began in a small kitchen where Nonno Giuseppe perfected his dough recipe over decades. Three generations later, we bring that same soul to every pizza we make.</p>
+        <ul class="check-list">
+          <li><span class="check-icon"><i class="fas fa-check"></i></span> Imported "00" flour from Naples</li>
+          <li><span class="check-icon"><i class="fas fa-check"></i></span> San Marzano tomatoes from Mount Vesuvius</li>
+          <li><span class="check-icon"><i class="fas fa-check"></i></span> Fresh mozzarella di bufala, hand-pulled daily</li>
+          <li><span class="check-icon"><i class="fas fa-check"></i></span> Dough fermented for minimum 48 hours</li>
         </ul>
+        <a href="public/templates/information.html" class="btn-primary">Our Full Story</a>
       </div>
     </div>
-  </nav>
+  </section>
 
-
-
-    <!-- Button -->
-    <div class="img-wrapper" class="alert alert-warning" role="alert">
-      <img class="img-fluid" src="../images/image.jpg">
-      <div class="img-overlay">
-        <button class="btn btn-lg btn-warning">Welcome to your favorite restaurant, here you will get every type of <a href="#" class="alert-link">pizza</a> you choose!!!</button>
+  <!-- FEATURED MENU -->
+  <section class="section-dark">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="eyebrow center">From Our Kitchen</div>
+      <h2 class="section-title" style="text-align:center;">Our Most <em>Loved</em> Pizzas</h2>
+      <div class="cards-grid">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&q=80" alt="Margherita"/>
+          <div class="card-body"><div class="card-name">Margherita Classica</div><div class="card-desc">San Marzano tomato, buffalo mozzarella, fresh basil, olive oil</div><div class="card-foot"><span class="card-price">€13.50</span><button class="btn-plus" onclick="showToast('Margherita added! 🍕')">+</button></div></div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80" alt="Diavola"/>
+          <div class="card-body"><div class="card-name">Diavola Piccante</div><div class="card-desc">Spicy salami, fior di latte, San Marzano, chilli flakes, capers</div><div class="card-foot"><span class="card-price">€15.00</span><button class="btn-plus" onclick="showToast('Diavola added! 🌶️')">+</button></div></div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80" alt="Quattro Formaggi"/>
+          <div class="card-body"><div class="card-name">Quattro Formaggi</div><div class="card-desc">Mozzarella, gorgonzola, pecorino, parmigiano, honey drizzle</div><div class="card-foot"><span class="card-price">€16.00</span><button class="btn-plus" onclick="showToast('Quattro added! 🧀')">+</button></div></div>
+        </div>
       </div>
-
+      <div style="text-align:center;margin-top:2.5rem;"><a href="public/templates/menu.html" class="btn-outline-gold">View Full Menu →</a></div>
     </div>
-    
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="eyebrow center">What Guests Say</div>
+      <h2 class="section-title" style="text-align:center;">Loved by Pizza <em>Lovers</em></h2>
+      <div class="t-grid">
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Best pizza outside of Naples. The dough is incredibly light and the toppings are just perfect. Absolutely coming back!"</p><div class="t-author"><div class="t-av">MR</div><div><div class="t-name">Marco Rossi</div><div class="t-city">Lisbon</div></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"The Quattro Formaggi left me speechless. Warm atmosphere, great service — everything a proper Italian restaurant should be."</p><div class="t-author"><div class="t-av">AS</div><div><div class="t-name">Ana Silva</div><div class="t-city">Porto</div></div></div></div>
+        <div class="t-card"><div class="t-stars">★★★★★</div><p class="t-text">"Ordered delivery and couldn't believe how good it was. Still crispy! Italy Pizza is my permanent go-to from now on."</p><div class="t-author"><div class="t-av">JF</div><div><div class="t-name">João Ferreira</div><div class="t-city">Cascais</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow center">Ready to dine?</div>
+      <h2>Reserve Your Table <em>Tonight</em></h2>
+      <p>Book online in seconds — dine-in or delivery, we've got you covered.</p>
+      <div class="cta-btns">
+        <a href="public/templates/contact.html" class="btn-primary">Make a Reservation</a>
+        <a href="public/templates/contact.html" class="btn-outline-gold">Order Delivery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="footer-logo">Italy <span>Pizza</span></span><p>Authentic Neapolitan pizza crafted with love since 1987. Every bite is a journey to Italy.</p></div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="landing_page.html">Home</a></li><li><a href="public/templates/menu.html">Menu</a></li><li><a href="public/templates/information.html">About</a></li><li><a href="public/templates/contact.html">Reservations</a></li></ul></div>
+      <div class="footer-col"><h4>Hours</h4><ul><li><span>Mon–Fri: 12–22h</span></li><li><span>Sat–Sun: 11–23h</span></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><span>📍 Rua da Pizza 42, Lisbon</span></li><li><span>📞 +351 21 345 6789</span></li><li><span>✉️ hello@italypizza.pt</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Italy Pizza. All rights reserved.</span><span>Made with ❤️ &amp; 🍕</span></div>
+  </div></footer>
+
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="public/js/app.js"></script>
+</body>
+</html>

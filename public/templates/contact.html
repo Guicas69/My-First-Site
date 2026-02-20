@@ -1,128 +1,239 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Pizza Time</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="../css/style_home.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <style>
-    body {
-      font-family: "Times New Roman", Georgia, Serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Playfair Display";
-      letter-spacing: 5px;
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservations & Delivery — Napoli Fuoco</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <link rel="stylesheet" href="../css/style_contact.css"/>
 </head>
-
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-      <a href="../templates/menu.html" class="w3-bar-item w3-button">Your favorite pizza !!!</a>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="../templates/menu.html" class="w3-bar-item w3-button">Menu</a>
-        <a href="../templates/login.html" class="w3-bar-item w3-button">Login</a>
-        <a href="../templates/create_account.html" class="w3-bar-item w3-button">Create account</a>
-        <a href="../templates/contact.html" class="w3-bar-item w3-button">Contact</a>
-        <a href="../templates/information.html" class="w3-bar-item w3-button">Information</a>
-      </div>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a class="nav-logo" href="../../index.html">
+      Napoli Fuoco
+      <span>Authentic Italian</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Reservations</a>
     </div>
-  </div>
+    <div class="nav-auth" id="navAuth"></div>
+  </nav>
 
+  <div class="page-wrap">
 
-    <div class="container" style="padding-top: 100px;">
-        <div class="row">
-            <!-- Contact Form and Info Column -->
-            <div class="col-lg-6 col-12">
-                <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
-                <p class="text-sm-left w-responsive mx-auto mb-4">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of minutes to help you.</p>
+    <!-- HERO -->
+    <div class="contact-hero">
+      <div class="section-label">Get in Touch</div>
+      <h1>Reserve, Order &amp; <em>Enjoy</em></h1>
+      <p>Book a table for a special evening, or order delivery straight to your door.</p>
+    </div>
 
-                <div class="row">
-                    <div class=" col-8">
-                        <!-- Contact Form -->
-                        <div class="mb-md-0 mb-5">
-                            <form id="contact-form" name="contact-form" action="save_info.html">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            <label for="name" class="">Your name</label>
-                                            <input type="text" id="name" name="name" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            <label for="email" class="">Your email</label>
-                                            <input type="text" id="email" name="email" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="md-form mb-0">
-                                            <label for="subject" class="">Subject</label>
-                                            <input type="text" id="subject" name="subject" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="md-form">
-                                            <label for="message">Your message</label>
-                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="text-center text-md-left">
-                                <a class="btn btn-dark mt-4" onclick="document.getElementById('contact-form').submit();">Send</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" col-4">
-                        <!-- Contact Info -->
-                        <div class="contact-info text-center">
-                            <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                                    <p>Quarteira, 8125-406, Portugal</p>
-                                </li>
-                                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                                    <p>+359 969 120 750</p>
-                                </li>
-                                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                                    <p>contact@mdbootstrap.com</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Image Column -->
-            <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
-                <img src="../images/local.png" class="local_pizza" alt="Local Pizza">
-            </div>
+    <!-- TAB SWITCHER -->
+    <div class="contact-tabs">
+      <button class="contact-tab active" onclick="switchTab('reservation', this)">🍽️ Restaurant Reservation</button>
+      <button class="contact-tab" onclick="switchTab('delivery', this)">🛵 Order Delivery</button>
+    </div>
+
+    <div class="contact-body">
+
+      <!-- ════════════════════════════
+           TAB 1 — RESERVATION FORM
+      ════════════════════════════ -->
+      <div id="tab-reservation">
+
+        <!-- Success state (hidden until form submitted) -->
+        <div class="success-card" id="reservationSuccess" style="display:none;">
+          <div class="success-icon">🎉</div>
+          <h2>Reservation Confirmed!</h2>
+          <p>Thank you! We've received your booking and will send a confirmation to your email shortly. We look forward to welcoming you!</p>
+          <button class="btn-primary" onclick="resetReservation()">Make Another Reservation</button>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Reservation form card -->
+        <div class="form-card" id="reservationForm">
+          <h2>Book Your Table</h2>
+          <p class="subtitle">Fill in the details below — we'll confirm within 2 hours.</p>
+
+          <div class="form-two-col">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" id="resFirst" placeholder="Giovanni"/>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" id="resLast" placeholder="Conti"/>
+            </div>
+
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" id="resEmail" placeholder="your@email.com"/>
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" id="resPhone" placeholder="+351 xxx xxx xxx"/>
+            </div>
+
+            <div class="form-group">
+              <label>Date *</label>
+              <input type="date" id="resDate"/>
+            </div>
+            <div class="form-group">
+              <label>Time *</label>
+              <select id="resTime">
+                <option value="">Select time...</option>
+                <option>12:00</option><option>12:30</option><option>13:00</option>
+                <option>13:30</option><option>14:00</option><option>19:00</option>
+                <option>19:30</option><option>20:00</option><option>20:30</option>
+                <option>21:00</option><option>21:30</option><option>22:00</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Number of Guests *</label>
+              <select id="resGuests">
+                <option value="">Select...</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Occasion</label>
+              <select id="resOccasion">
+                <option value="">None</option>
+                <option>Birthday</option><option>Anniversary</option>
+                <option>Business Dinner</option><option>Date Night</option>
+                <option>Family Gathering</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full">
+              <label>Special Requests / Dietary Requirements</label>
+              <textarea id="resNotes" placeholder="Allergies, high-chair needed, decorations..."></textarea>
+            </div>
+
+            <div class="form-full" id="resError"></div>
+
+            <div class="form-full">
+              <button class="btn-submit" onclick="submitReservation()">Confirm Reservation 🍕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info cards -->
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="icon">📍</div>
+            <h4>Address</h4>
+            <p>Rua da Pizza 42,<br/>1200-001 Lisbon</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">🕐</div>
+            <h4>Hours</h4>
+            <p>Mon–Fri: 12–22h<br/>Sat–Sun: 11–23h</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">📞</div>
+            <h4>Phone</h4>
+            <p>+351 21 345 6789</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">✉️</div>
+            <h4>Email</h4>
+            <p>hello@napolifuoco.pt</p>
+          </div>
+        </div>
+
+      </div><!-- /tab-reservation -->
+
+
+      <!-- ════════════════════════════
+           TAB 2 — DELIVERY ORDER
+      ════════════════════════════ -->
+      <div id="tab-delivery" style="display:none;">
+
+        <div class="delivery-header">
+          <div>
+            <h2>Order Pizza Delivery</h2>
+            <p>Free delivery on orders over €25 · Estimated 30–45 min</p>
+          </div>
+          <div class="online-badge">
+            <div class="online-dot"></div>
+            <span class="online-text">Open for delivery</span>
+          </div>
+        </div>
+
+        <div class="delivery-layout">
+
+          <!-- LEFT: pizza list -->
+          <div id="pizzaList">
+            <!-- Pizza rows inserted by JS below -->
+          </div>
+
+          <!-- RIGHT: cart -->
+          <div class="order-cart">
+            <div class="cart-title">🛒 Your Order</div>
+            <div id="cartItems">
+              <div class="cart-empty">Your cart is empty.<br/>Add items to get started!</div>
+            </div>
+            <div class="cart-total" id="cartTotal" style="display:none;">
+              <span>Total</span>
+              <span id="cartTotalAmt">€0.00</span>
+            </div>
+            <div class="cart-field">
+              <label>Delivery Address *</label>
+              <input type="text" id="deliveryAddress" placeholder="Rua das Flores, 12, Lisbon"/>
+            </div>
+            <div class="cart-field">
+              <label>Phone *</label>
+              <input type="text" id="deliveryPhone" placeholder="+351 xxx xxx xxx"/>
+            </div>
+            <div id="cartError"></div>
+            <button class="btn-submit" style="margin-top:1rem;" onclick="placeOrder()">Place Order 🛵</button>
+          </div>
+
+        </div>
+      </div><!-- /tab-delivery -->
+
+    </div><!-- /contact-body -->
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Napoli <span>Fuoco</span></span>
+          <p>Authentic Neapolitan pizza crafted with love and served with passion since 1987.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Reservations</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Hours</h4><ul>
+          <li><span>Mon – Fri: 12–22h</span></li>
+          <li><span>Sat – Sun: 11–23h</span></li>
+        </ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><span>📍 Rua da Pizza 42, Lisbon</span></li>
+          <li><span>📞 +351 21 345 6789</span></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Napoli Fuoco.</span><span>Made with ❤️ &amp; 🍕</span>
+      </div>
+    </footer>
+
+  </div><!-- /page-wrap -->
+
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/contact.js"></script>
 </body>
 </html>

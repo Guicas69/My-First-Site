@@ -1,88 +1,160 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Pizza Time</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/style_login.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — Napoli Fuoco</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <link rel="stylesheet" href="../css/style_login.css"/>
 </head>
+<body>
 
-<body> <!-- partial:index.partial.html -->
-    <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-        <span></span> <span></span> <span></span> <span></span> <span></span>
+  <!--
+    This page is a TWO-COLUMN layout:
+    Left  = visual / branding photo
+    Right = the actual login form
+  -->
+  <div class="auth-page">
 
-        <div class="signin">
+    <!-- ── LEFT: VISUAL PANEL ── -->
+    <div class="auth-visual">
+      <div class="auth-visual-img"></div>
+      <div class="auth-visual-overlay"></div>
 
-            <div class="content">
+      <a href="../../index.html" class="auth-visual-logo">
+        Napoli <span>Fuoco</span>
+      </a>
 
-                <h2>Sign In</h2>
+      <div class="auth-visual-content">
+        <p class="auth-visual-quote">"A meal without wine is like a day without <em>sunshine</em>."</p>
+        <p class="auth-visual-sub">— Italian proverb</p>
+      </div>
+    </div>
 
-                <div class="form">
+    <!-- ── RIGHT: FORM PANEL ── -->
+    <div class="auth-form-panel">
+      <div class="auth-form-wrap">
 
-                    <div class="inputBox">
+        <!-- Logo shown only on mobile (left panel is hidden on small screens) -->
+        <a href="../../index.html" class="auth-mobile-logo">Napoli Fuoco</a>
 
-                        <input type="text" required> <i>Username</i>
+        <!-- ══ MAIN LOGIN SECTION ══ -->
+        <div class="main-section" id="mainSection">
+          <h1 class="auth-heading">Welcome back</h1>
+          <p class="auth-subheading">Sign in to manage your reservations and orders.</p>
 
-                    </div>
-
-                    <div class="inputBox">
-
-                        <input type="password" required> <i>Password</i>
-
-                    </div>
-
-                    <div class="links"> <a href="#">Forgot Password</a> <a href="../templates/create_account.html">Create account</a>
-
-                    </div>
-
-                    <div class="inputBox">
-
-                        <a href="../templates/information.html" class="Box">Login</a>
-
-                    </div>
-
-                </div>
-
+          <div class="auth-form">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email"/>
             </div>
 
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password"/>
+            </div>
+
+            <!-- Forgot password — shows the forgot section below -->
+            <button class="forgot-link" onclick="showForgot()">Forgot your password?</button>
+
+            <!-- Error message will appear here -->
+            <div id="loginError"></div>
+
+            <button class="btn-submit" onclick="doLogin()">Sign In</button>
+          </div>
+
+          <p class="auth-switch">
+            Don't have an account? <a href="create_account.html">Create one</a>
+          </p>
         </div>
 
-    </section> <!-- partial -->
+        <!-- ══ FORGOT PASSWORD SECTION ══ -->
+        <!-- Hidden by default, shown when user clicks "Forgot password?" -->
+        <div class="forgot-section" id="forgotSection">
+          <button class="back-btn" onclick="hideForgot()">← Back to Sign In</button>
+          <h1 class="auth-heading">Reset Password</h1>
+          <p class="auth-subheading">Enter your email and we'll send you reset instructions.</p>
 
+          <div class="auth-form">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="forgotEmail" placeholder="your@email.com"/>
+            </div>
+
+            <div id="forgotMsg"></div>
+
+            <button class="btn-submit" id="forgotBtn" onclick="doForgot()">Send Reset Link</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /auth-page -->
+
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+  <script src="../js/auth.js"></script>
+  <script>
+    /* Toggle between login and forgot-password views */
+    function showForgot() {
+      document.getElementById('mainSection').classList.add('hidden');
+      document.getElementById('forgotSection').classList.add('visible');
+      document.getElementById('forgotEmail').value = document.getElementById('loginEmail').value;
+    }
+
+    function hideForgot() {
+      document.getElementById('forgotSection').classList.remove('visible');
+      document.getElementById('mainSection').classList.remove('hidden');
+    }
+
+    /* LOGIN */
+    function doLogin() {
+      const email    = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const password = document.getElementById('loginPassword').value;
+      const errEl    = document.getElementById('loginError');
+
+      if (!email || !password) {
+        errEl.innerHTML = '<div class="error-msg">Please enter your email and password.</div>';
+        return;
+      }
+
+      const users = getUsers();
+      const user  = users.find(u => u.email === email && u.password === password);
+
+      if (!user) {
+        errEl.innerHTML = '<div class="error-msg">Incorrect email or password. Please try again.</div>';
+        return;
+      }
+
+      setCurrentUser(user);
+      showToast('Welcome back, ' + user.first + '! 🍕');
+
+      /* Redirect to home after short delay */
+      setTimeout(() => { window.location.href = '../../index.html'; }, 1200);
+    }
+
+    /* FORGOT PASSWORD */
+    function doForgot() {
+      const email = document.getElementById('forgotEmail').value.trim().toLowerCase();
+      const msgEl = document.getElementById('forgotMsg');
+      const btn   = document.getElementById('forgotBtn');
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msgEl.innerHTML = '<div class="error-msg">Please enter a valid email address.</div>';
+        return;
+      }
+
+      /* Always show success (security best practice — don't reveal if email exists) */
+      msgEl.innerHTML = '<div class="success-msg">✅ If an account exists with this email, reset instructions have been sent. Check your inbox!</div>';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.disabled = false;
+        msgEl.innerHTML = '';
+        hideForgot();
+      }, 4000);
+    }
+  </script>
 </body>
-
 </html>

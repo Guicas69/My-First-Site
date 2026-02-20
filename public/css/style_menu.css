@@ -1,0 +1,86 @@
+/* ============================================
+   style_menu.css
+   Styles ONLY for menu.html
+   ============================================ */
+
+.menu-hero {
+  background: linear-gradient(135deg, var(--brown) 0%, #1a0a04 100%);
+  padding: 5rem 5% 4rem;
+  text-align: center;
+}
+.menu-hero .section-label { justify-content: center; color: var(--gold); }
+.menu-hero .section-label::before { background: var(--gold); }
+.menu-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 900;
+  color: white; margin-bottom: 0.75rem;
+}
+.menu-hero h1 em { font-style: italic; color: var(--gold); }
+.menu-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 440px; margin: 0 auto; }
+
+/* ── TABS ── */
+.menu-tabs-wrap {
+  background: white; box-shadow: var(--shadow);
+  position: sticky; top: 72px; z-index: 50;
+  border-bottom: 2px solid var(--cream-dark);
+}
+.menu-tabs {
+  display: flex; gap: 0; overflow-x: auto;
+  padding: 0 5%; max-width: 100%;
+}
+.menu-tabs::-webkit-scrollbar { display: none; }
+.menu-tab {
+  padding: 16px 24px; border: none; background: none;
+  font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600;
+  color: var(--text-light); cursor: pointer; transition: color .2s;
+  border-bottom: 2.5px solid transparent; margin-bottom: -2px;
+  white-space: nowrap;
+}
+.menu-tab.active { color: var(--red); border-bottom-color: var(--red); }
+.menu-tab:hover { color: var(--red); }
+
+/* ── MENU SECTION ── */
+.menu-section { padding: 3.5rem 5%; }
+.menu-category-title {
+  font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700;
+  color: var(--brown); margin-bottom: 0.4rem;
+}
+.menu-category-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 2rem; }
+
+/* ── MENU GRID ── */
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.menu-card {
+  background: white; border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s;
+}
+.menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.menu-card img {
+  width: 100%; height: 190px; object-fit: cover;
+  display: block; background: var(--cream-dark);
+}
+.menu-card-body { padding: 1.2rem; }
+.menu-card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--brown); margin-bottom: 0.35rem; }
+.menu-card-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.55; margin-bottom: 1rem; }
+.menu-card-footer { display: flex; justify-content: space-between; align-items: center; }
+.menu-price { font-size: 1.05rem; font-weight: 700; color: var(--red); }
+
+/* ── ADD TO ORDER BUTTON ── */
+.btn-add {
+  background: var(--red); color: white; border: none;
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 1.1rem; cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.btn-add:hover { background: var(--red-dark); transform: scale(1.12); }
+
+/* ── HIDDEN CATEGORIES (shown by JS) ── */
+.menu-category { display: none; }
+.menu-category.visible { display: block; }
+
+@media (max-width: 480px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
